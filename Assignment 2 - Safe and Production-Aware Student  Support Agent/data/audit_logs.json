@@ -1,0 +1,2366 @@
+[
+  {
+    "id": "AUD-F6ECBF1D",
+    "timestamp": "2026-10-31T14:52:58.246052",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-C2122A44",
+    "timestamp": "2026-10-31T14:52:58.281833",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-F922D4D1",
+    "timestamp": "2026-10-31T14:52:59.088698",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-169800D3",
+    "timestamp": "2026-10-31T14:53:22.224262",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-241F282B",
+    "timestamp": "2026-10-31T14:53:49.944240",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-30F2E2",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-40080218",
+    "timestamp": "2026-10-31T14:54:01.200991",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-30F2E2",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-04173D44",
+    "timestamp": "2026-10-31T14:54:01.219840",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-6D960A",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-8475DCEE",
+    "timestamp": "2026-10-31T14:54:01.241563",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-6D960A",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-462A8341",
+    "timestamp": "2026-10-31T14:54:48.463520",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-357D41C5",
+    "timestamp": "2026-10-31T14:54:48.487879",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-CBB8E558",
+    "timestamp": "2026-10-31T14:54:49.230133",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-7DC36814",
+    "timestamp": "2026-10-31T14:55:48.814136",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-040AE86C",
+    "timestamp": "2026-10-31T14:56:12.154493",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-A09B62",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-16F78770",
+    "timestamp": "2026-10-31T14:56:21.221052",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-A09B62",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-CB91E2C7",
+    "timestamp": "2026-10-31T14:56:21.248024",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-F4D4D3",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-4DDED952",
+    "timestamp": "2026-10-31T14:56:21.264612",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-F4D4D3",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-E9E8DE55",
+    "timestamp": "2026-10-31T14:56:55.189525",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1334D524",
+    "timestamp": "2026-10-31T14:57:08.838141",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-631544A1",
+    "timestamp": "2026-10-31T14:57:09.469484",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU102",
+    "permission_decision": "DENIED",
+    "approval_status": "N/A",
+    "execution_result": "BLOCKED",
+    "details": {
+      "attempted_target": "STU102",
+      "violating_user": "STU101",
+      "reason": "Cross-student privacy violation blocked by backend authorization engine."
+    }
+  },
+  {
+    "id": "AUD-56BDF87E",
+    "timestamp": "2026-10-31T14:58:31.061262",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-D61D2E6A",
+    "timestamp": "2026-10-31T14:58:31.102361",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-8433249D",
+    "timestamp": "2026-10-31T14:58:32.115259",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-D839411D",
+    "timestamp": "2026-10-31T14:58:51.313005",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-E10BE6B1",
+    "timestamp": "2026-10-31T14:59:24.805686",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-4D550A",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-99C6461B",
+    "timestamp": "2026-10-31T14:59:33.339385",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-4D550A",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-719C5C99",
+    "timestamp": "2026-10-31T14:59:33.481316",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-0BDC56",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-51D2FAFB",
+    "timestamp": "2026-10-31T14:59:33.659482",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-0BDC56",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-A57BA1F4",
+    "timestamp": "2026-10-31T15:12:22.702974",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-03A1D768",
+    "timestamp": "2026-10-31T15:12:37.674499",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-F09B5B04",
+    "timestamp": "2026-10-31T15:13:33.545086",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-D3CB46EC",
+    "timestamp": "2026-10-31T15:13:42.872862",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU102",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "admin_access": true
+    }
+  },
+  {
+    "id": "AUD-673C4289",
+    "timestamp": "2026-10-31T15:22:56.253784",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-3773E5AD",
+    "timestamp": "2026-10-31T15:22:57.576114",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-DC503FDB",
+    "timestamp": "2026-10-31T15:23:18.174097",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-6482DBF3",
+    "timestamp": "2026-10-31T15:23:34.296514",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1B5F5DE6",
+    "timestamp": "2026-10-31T15:34:08.802605",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-F6F5A23F",
+    "timestamp": "2026-10-31T15:47:58.289287",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-CE364877",
+    "timestamp": "2026-10-31T15:48:02.103145",
+    "user_id": "STU102",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Ananya Iyer",
+      "email": "ananya.iyer@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-2C393F4F",
+    "timestamp": "2026-10-31T15:48:55.161853",
+    "user_id": "STU102",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU102:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-F2DFC6",
+      "old_email": "ananya.iyer@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-C21DBA3C",
+    "timestamp": "2026-10-31T15:49:18.539323",
+    "user_id": "STU102",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU102",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-B2CA2944",
+    "timestamp": "2026-10-31T15:49:39.128087",
+    "user_id": "STU102",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU102",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-7B6082C6",
+    "timestamp": "2026-10-31T15:50:19.197318",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-30A6DA9B",
+    "timestamp": "2026-10-31T15:50:50.152629",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU102:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-F2DFC6",
+      "requester_id": "STU102",
+      "old_value": "ananya.iyer@institute.edu",
+      "new_value": "aarav.updated@gmail.com",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-5740CCAA",
+    "timestamp": "2026-10-31T15:51:12.947174",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:ADMIN001:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-ADE050",
+      "old_email": "admin@institute.edu",
+      "requested_email": "hbik@iuwrdwsuie.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-BB0F4ED4",
+    "timestamp": "2026-10-31T15:51:29.003354",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:ADMIN001:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-ADE050",
+      "requester_id": "ADMIN001",
+      "old_value": "admin@institute.edu",
+      "new_value": "hbik@iuwrdwsuie.com",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-69A8B505",
+    "timestamp": "2026-10-31T15:51:44.889305",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU102",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "admin_access": true
+    }
+  },
+  {
+    "id": "AUD-CB5C9ACC",
+    "timestamp": "2026-10-31T15:54:32.984734",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-3DBAE084",
+    "timestamp": "2026-10-31T15:54:39.838228",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "hbik@iuwrdwsuie.com"
+    }
+  },
+  {
+    "id": "AUD-6E35EDA3",
+    "timestamp": "2026-10-31T15:54:42.866565",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-76A64321",
+    "timestamp": "2026-10-31T15:55:10.257987",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "hbik@iuwrdwsuie.com"
+    }
+  },
+  {
+    "id": "AUD-74B3CC60",
+    "timestamp": "2026-10-31T16:03:18.156200",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-AA8A6497",
+    "timestamp": "2026-10-31T16:03:26.827161",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-787B9795",
+    "timestamp": "2026-10-31T16:03:27.395844",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "admin_access": true
+    }
+  },
+  {
+    "id": "AUD-BBF11C56",
+    "timestamp": "2026-10-31T16:03:36.222179",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-459ACEDD",
+    "timestamp": "2026-10-31T16:03:36.262112",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-BFFE3450",
+    "timestamp": "2026-10-31T16:03:37.196689",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-8A070285",
+    "timestamp": "2026-10-31T16:04:14.590502",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-E70D1F03",
+    "timestamp": "2026-10-31T16:04:45.258884",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-8F509F",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-D7CE4BC1",
+    "timestamp": "2026-10-31T16:04:51.298848",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-8F509F",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-FD60940D",
+    "timestamp": "2026-10-31T16:04:51.305674",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-C167A3",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-993F88D3",
+    "timestamp": "2026-10-31T16:04:51.313230",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-C167A3",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-C1E4238F",
+    "timestamp": "2026-10-31T16:06:00.251953",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-731571C0",
+    "timestamp": "2026-10-31T16:06:00.320160",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-7FEFADD1",
+    "timestamp": "2026-10-31T16:06:00.930734",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-E84F799B",
+    "timestamp": "2026-10-31T16:06:28.085490",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-E193A96B",
+    "timestamp": "2026-10-31T16:06:52.180604",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-9B49E9",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-435482AF",
+    "timestamp": "2026-10-31T16:07:04.083860",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-9B49E9",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-3D3079E7",
+    "timestamp": "2026-10-31T16:07:04.089177",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-69D6EA",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-E0411076",
+    "timestamp": "2026-10-31T16:07:04.095310",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-69D6EA",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-B34D7CAD",
+    "timestamp": "2026-10-31T16:08:46.899443",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-CEFB7DCA",
+    "timestamp": "2026-10-31T16:09:18.249597",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-68ABE511",
+    "timestamp": "2026-10-31T16:11:15.980927",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-2AA098CB",
+    "timestamp": "2026-10-31T16:11:32.161272",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-F20FB403",
+    "timestamp": "2026-10-31T16:17:16.953876",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-D83CCB1B",
+    "timestamp": "2026-10-31T16:17:55.444188",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-9DA464CF",
+    "timestamp": "2026-10-31T16:19:58.823992",
+    "user_id": "STU102",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Ananya Iyer",
+      "email": "ananya.iyer@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-5C762207",
+    "timestamp": "2026-10-31T16:23:18.336342",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-8AB496AD",
+    "timestamp": "2026-10-31T16:23:19.106725",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-5E040884",
+    "timestamp": "2026-10-31T16:23:51.710788",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-51A33199",
+    "timestamp": "2026-10-31T16:23:51.761554",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-BEE8C891",
+    "timestamp": "2026-10-31T16:23:52.267116",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-4903A8BE",
+    "timestamp": "2026-10-31T16:24:14.834936",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-5B9A97A1",
+    "timestamp": "2026-10-31T16:24:45.406105",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-343A55",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-49DA9852",
+    "timestamp": "2026-10-31T16:24:50.439312",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-343A55",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-CA52273D",
+    "timestamp": "2026-10-31T16:24:50.464261",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-66A6BA",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-902D5BD9",
+    "timestamp": "2026-10-31T16:24:50.485708",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-66A6BA",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-A5B78A92",
+    "timestamp": "2026-10-31T16:28:25.416655",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-B59EE8E7",
+    "timestamp": "2026-10-31T16:32:08.186257",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-3FB1A728",
+    "timestamp": "2026-10-31T16:33:50.194363",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-9AEE5644",
+    "timestamp": "2026-10-31T16:33:58.908221",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-BDAAE6F5",
+    "timestamp": "2026-10-31T16:34:44.905001",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1364E9CA",
+    "timestamp": "2026-10-31T16:34:44.954750",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-7FD4026B",
+    "timestamp": "2026-10-31T16:34:45.694541",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-DB903340",
+    "timestamp": "2026-10-31T16:34:54.696258",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-170A3ADA",
+    "timestamp": "2026-10-31T16:35:07.302629",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-DD87AC",
+      "old_email": "aarav.sharma2@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-37FC9B0C",
+    "timestamp": "2026-10-31T16:35:17.178058",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-DD87AC",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-C4EF79CA",
+    "timestamp": "2026-10-31T16:36:19.527803",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1B7CC913",
+    "timestamp": "2026-10-31T16:36:19.569394",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1FB2152A",
+    "timestamp": "2026-10-31T16:36:20.234045",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-AE57805A",
+    "timestamp": "2026-10-31T16:36:31.467434",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-F8D6E93E",
+    "timestamp": "2026-10-31T16:36:47.486574",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-E1B763",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-BD03575A",
+    "timestamp": "2026-10-31T16:36:55.641029",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-E1B763",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-F5D64AC5",
+    "timestamp": "2026-10-31T16:36:55.653117",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-B7CAC5",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-0C815FD2",
+    "timestamp": "2026-10-31T16:36:55.661123",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-B7CAC5",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-B97B69E1",
+    "timestamp": "2026-10-31T16:41:04.070401",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-B7038728",
+    "timestamp": "2026-10-31T16:41:17.981585",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-0178F166",
+    "timestamp": "2026-10-31T16:41:52.334543",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-52DAA239",
+    "timestamp": "2026-10-31T16:41:57.165670",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-0CFDC5FF",
+    "timestamp": "2026-10-31T16:42:35.224631",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-9AC7DF05",
+    "timestamp": "2026-10-31T16:45:44.200758",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-8D59A871",
+    "timestamp": "2026-10-31T16:49:31.102903",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-1FDBF98F",
+    "timestamp": "2026-10-31T16:49:31.163455",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-15C15645",
+    "timestamp": "2026-10-31T16:49:31.961726",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-8F83D196",
+    "timestamp": "2026-10-31T16:49:43.387135",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-283815A7",
+    "timestamp": "2026-10-31T16:49:43.441734",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-BB5AFE87",
+    "timestamp": "2026-10-31T16:49:44.261129",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-B7205E57",
+    "timestamp": "2026-10-31T16:49:52.671546",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-0A5ACBEF",
+    "timestamp": "2026-10-31T16:50:14.445549",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-50AA8D",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-ACEEB178",
+    "timestamp": "2026-10-31T16:50:20.489856",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-50AA8D",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-77D57129",
+    "timestamp": "2026-10-31T16:50:20.501322",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-15CDF3",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-8AD98F23",
+    "timestamp": "2026-10-31T16:50:20.512104",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-15CDF3",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-6301DE51",
+    "timestamp": "2026-10-31T16:51:55.129737",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-F12AF4B4",
+    "timestamp": "2026-10-31T16:52:40.726122",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-8ED43A90",
+    "timestamp": "2026-10-31T16:53:24.464743",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-3C1FB39C",
+    "timestamp": "2026-10-31T16:53:43.585400",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-3E226E",
+      "old_email": "aarav.sharma2@institute.edu",
+      "requested_email": "oiwejfehif@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-5118740C",
+    "timestamp": "2026-10-31T16:54:00.313022",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-FDF01971",
+    "timestamp": "2026-10-31T16:54:08.529637",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-3E226E",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma2@institute.edu",
+      "new_value": "oiwejfehif@gmail.com",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-F3DCDC1C",
+    "timestamp": "2026-10-31T16:54:44.923922",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "admin_access": true
+    }
+  },
+  {
+    "id": "AUD-AE188293",
+    "timestamp": "2026-10-31T16:55:17.474292",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "admin_access": true
+    }
+  },
+  {
+    "id": "AUD-0EDEA481",
+    "timestamp": "2026-10-31T17:01:08.239872",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-FAEC5021",
+    "timestamp": "2026-10-31T17:01:08.286879",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-4627E7A6",
+    "timestamp": "2026-10-31T17:01:08.816038",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-88B27D35",
+    "timestamp": "2026-10-31T17:01:22.949351",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-25FB4288",
+    "timestamp": "2026-10-31T17:01:45.982658",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-7BD4A4",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-1807D77A",
+    "timestamp": "2026-10-31T17:01:54.888216",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-7BD4A4",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-421841AD",
+    "timestamp": "2026-10-31T17:01:54.899457",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-A45CC3",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-B48E9347",
+    "timestamp": "2026-10-31T17:01:54.909907",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-A45CC3",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-03D62ADF",
+    "timestamp": "2026-10-31T17:37:13.235618",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-B2FB1798",
+    "timestamp": "2026-10-31T17:37:38.546462",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-E27F1884",
+    "timestamp": "2026-10-31T17:38:46.106066",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-79409C25",
+    "timestamp": "2026-10-31T18:00:27.965415",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-02B1D929",
+    "timestamp": "2026-10-31T18:00:28.034998",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Academic Administrator",
+      "email": "admin@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-CA9F94DA",
+    "timestamp": "2026-10-31T18:00:28.650622",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-BAA5504F",
+    "timestamp": "2026-10-31T18:00:51.472721",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_student_record",
+    "target_resource": "academic_profile:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-A6B03CFD",
+    "timestamp": "2026-10-31T18:01:20.893879",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-485F92",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.updated@gmail.com",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-5E95AB48",
+    "timestamp": "2026-10-31T18:01:29.796694",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "REJECT_REQUEST",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "REJECTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-485F92",
+      "requester_id": "STU101",
+      "rejection_reason": "Invalid personal domain",
+      "rejected_by": "ADMIN001",
+      "database_modified": false
+    }
+  },
+  {
+    "id": "AUD-96DC66F1",
+    "timestamp": "2026-10-31T18:01:29.810305",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "REQUEST_EMAIL_UPDATE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "PENDING",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-2CE780",
+      "old_email": "aarav.sharma@institute.edu",
+      "requested_email": "aarav.sharma2@institute.edu",
+      "workflow": "Awaiting Administrator Review & Approval"
+    }
+  },
+  {
+    "id": "AUD-DAF57C30",
+    "timestamp": "2026-10-31T18:01:29.829747",
+    "user_id": "ADMIN001",
+    "user_role": "administrator",
+    "action": "APPROVE_AND_EXECUTE",
+    "target_resource": "student:STU101:email",
+    "permission_decision": "ALLOWED",
+    "approval_status": "EXECUTED",
+    "execution_result": "SUCCESS",
+    "details": {
+      "request_id": "APP-2026-2CE780",
+      "requester_id": "STU101",
+      "old_value": "aarav.sharma@institute.edu",
+      "new_value": "aarav.sharma2@institute.edu",
+      "approved_by": "ADMIN001"
+    }
+  },
+  {
+    "id": "AUD-9E8C0308",
+    "timestamp": "2026-10-31T18:03:57.736565",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-4399C78B",
+    "timestamp": "2026-10-31T18:04:05.908764",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "check_fee_status",
+    "target_resource": "financial_record:STU101",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "self_access": true
+    }
+  },
+  {
+    "id": "AUD-523EAF1C",
+    "timestamp": "2026-10-31T18:17:31.910346",
+    "user_id": "STU101",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma2@institute.edu"
+    }
+  },
+  {
+    "id": "AUD-F091D2BF",
+    "timestamp": "2026-10-31T18:26:00.489437",
+    "user_id": "STU103",
+    "user_role": "student",
+    "action": "LOGIN_ATTEMPT",
+    "target_resource": "auth_system",
+    "permission_decision": "ALLOWED",
+    "approval_status": "N/A",
+    "execution_result": "SUCCESS",
+    "details": {
+      "name": "Rohan Verma",
+      "email": "rohan.verma@institute.edu"
+    }
+  }
+]

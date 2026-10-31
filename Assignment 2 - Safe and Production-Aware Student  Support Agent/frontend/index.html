@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50 text-slate-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Support Desk</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            900: '#0c4a6e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Clean, refined scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Clean typography for markdown answers */
+        .markdown-body {
+            color: #1e293b;
+            font-size: 0.9375rem;
+            line-height: 1.65;
+        }
+        .markdown-body p {
+            margin-bottom: 0.65rem;
+        }
+        .markdown-body p:last-child {
+            margin-bottom: 0;
+        }
+        .markdown-body strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .markdown-body ul, .markdown-body ol {
+            margin-left: 1.25rem;
+            margin-bottom: 0.75rem;
+            list-style-type: disc;
+        }
+        .markdown-body li {
+            margin-bottom: 0.25rem;
+        }
+        .markdown-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0;
+            font-size: 0.84rem;
+        }
+        .markdown-body th {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 0.45rem 0.65rem;
+            font-weight: 600;
+            text-align: left;
+            color: #334155;
+        }
+        .markdown-body td {
+            border: 1px solid #e2e8f0;
+            padding: 0.45rem 0.65rem;
+            color: #475569;
+        }
+        .markdown-body code {
+            background: #f1f5f9;
+            color: #0369a1;
+            padding: 0.15rem 0.35rem;
+            border-radius: 0.25rem;
+            font-size: 0.85em;
+            font-family: inherit;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="h-full flex font-sans antialiased overflow-hidden bg-slate-50 text-slate-800">
+
+    <!-- ========================================================================= -->
+    <!-- 1. LOGIN SCREEN: CLEAN, PROFESSIONAL UNIVERSITY PORTAL                     -->
+    <!-- ========================================================================= -->
+    <div id="frontpage-login" class="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-slate-50 p-6 md:p-12">
+        <!-- Header brand -->
+        <div class="max-w-4xl mx-auto w-full flex items-center justify-between pb-6 border-b border-slate-200">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-700 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-slate-900 text-base leading-tight">Student Support</div>
+                    <div class="text-xs text-slate-500">Academic Services & Governance Portal</div>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-slate-500 bg-white border border-slate-200 px-3 py-1.5 rounded-md shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>System Status: Online</span>
+            </div>
+        </div>
+
+        <!-- Center Login Cards -->
+        <div class="max-w-4xl mx-auto w-full my-auto py-8">
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Student Support Desk</h1>
+                <p class="text-sm text-slate-600 mt-2">Sign in with your student credentials or administrative ID to access records, policies, and service requests.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Student Login Card -->
+                <div class="bg-white rounded-xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded border border-sky-100">Student Portal</span>
+                            <i data-lucide="user" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                        <h2 class="text-lg font-semibold text-slate-900">Student Sign In</h2>
+                        <p class="text-xs text-slate-500 mt-1">Review your tuition ledger, verify handbook policies, and interact with the student advisor agent.</p>
+
+                        <div class="space-y-3.5 mt-5">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Student Roll / ID Number</label>
+                                <input type="text" id="login-stu-id" placeholder="e.g. STU101"
+                                    class="w-full text-sm border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent font-mono">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Account Password</label>
+                                <input type="password" id="login-stu-pwd" placeholder="Enter password"
+                                    class="w-full text-sm border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent font-mono">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="handleFormLogin('student')"
+                            class="w-full bg-sky-700 hover:bg-sky-800 text-white font-medium text-sm py-2.5 rounded-lg transition flex items-center justify-center gap-2 shadow-xs">
+                            <span>Sign In to Student Desk</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Login Card -->
+                <div class="bg-white rounded-xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Staff & Operations</span>
+                            <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                        <h2 class="text-lg font-semibold text-slate-900">Administrator Sign In</h2>
+                        <p class="text-xs text-slate-500 mt-1">Office of Student Affairs operational console: review profile change requests, student directory, and security audit logs.</p>
+
+                        <div class="space-y-3.5 mt-5">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Staff ID</label>
+                                <input type="text" id="login-admin-id" placeholder="e.g. ADMIN001"
+                                    class="w-full text-sm border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:border-transparent font-mono">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Staff Security Password</label>
+                                <input type="password" id="login-admin-pwd" placeholder="Enter staff password"
+                                    class="w-full text-sm border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:border-transparent font-mono">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="handleFormLogin('admin')"
+                            class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm py-2.5 rounded-lg transition flex items-center justify-center gap-2 shadow-xs">
+                            <span>Sign In to Admin Portal</span>
+                            <i data-lucide="shield" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="max-w-4xl mx-auto w-full pt-6 border-t border-slate-200 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <span>Student Support · Role-Based Access Control · Human-in-the-Loop Governance</span>
+            <span class="font-mono text-slate-400">Strict Backend Isolation Enforced</span>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- 2. STUDENT PORTAL WORKSPACE                                               -->
+    <!-- ========================================================================= -->
+    <div id="student-application-root" class="hidden flex-1 flex h-full overflow-hidden bg-slate-50">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-full shrink-0 z-20">
+            <!-- Brand -->
+            <div class="p-4 border-b border-slate-200 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-700 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="font-semibold text-slate-900 text-xs truncate">Student Support Desk</div>
+                    <div class="text-[11px] text-emerald-600 flex items-center gap-1 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span>Connected</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="p-3 space-y-1">
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 py-1">Navigation</div>
+                <button onclick="switchStudentView('chat')" id="stu-nav-chat"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium bg-sky-50 text-sky-800 border border-sky-100 transition">
+                    <i data-lucide="message-square" class="w-4 h-4 text-sky-700"></i>
+                    <span>Support Assistant</span>
+                </button>
+                <button onclick="switchStudentView('profile')" id="stu-nav-profile"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+                    <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
+                    <span>Academic & Fee Record</span>
+                </button>
+                <button onclick="switchStudentView('handbook')" id="stu-nav-handbook"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+                    <i data-lucide="book-open" class="w-4 h-4 text-slate-400"></i>
+                    <span>Student Handbook</span>
+                </button>
+                <button onclick="switchStudentView('requests')" id="stu-nav-requests"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+                    <i data-lucide="clipboard-list" class="w-4 h-4 text-slate-400"></i>
+                    <span>Change Requests</span>
+                </button>
+            </div>
+
+            <!-- Security info box -->
+            <div class="p-3 mx-3 mt-2 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+                <div class="flex items-center gap-1.5 font-semibold text-slate-700 mb-1">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-700"></i>
+                    <span>Data Privacy</span>
+                </div>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Your queries are isolated to your authenticated student record. Cross-student data queries are blocked.</p>
+            </div>
+
+            <!-- User profile capsule & Sign out -->
+            <div class="mt-auto p-3 border-t border-slate-200 bg-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-semibold flex items-center justify-center text-xs shrink-0" id="stu-sidebar-avatar">
+                            AS
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-xs font-semibold text-slate-900 truncate" id="stu-sidebar-name">Student Name</div>
+                            <div class="text-[11px] text-slate-500 font-mono truncate" id="stu-sidebar-role">STU101</div>
+                        </div>
+                    </div>
+                    <button onclick="logoutToFrontpage()" title="Sign Out" class="text-slate-400 hover:text-red-600 p-1.5 rounded-md hover:bg-slate-50 transition">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
+            <!-- Header bar -->
+            <header class="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-2 text-xs text-slate-600">
+                    <span class="font-medium text-slate-900" id="stu-header-title">AI Support Assistant</span>
+                    <span class="text-slate-300">|</span>
+                    <span class="text-slate-500">Official Student Desk</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="downloadChatHistory()" class="flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 px-2.5 py-1.5 rounded-md transition shadow-2xs">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-slate-500"></i>
+                        <span>Export Chat</span>
+                    </button>
+                    <button onclick="startNewChat()" class="flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 px-2.5 py-1.5 rounded-md transition shadow-2xs">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-slate-500"></i>
+                        <span>New Chat</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Views Container -->
+            <div class="flex-1 overflow-hidden flex flex-col relative">
+
+                <!-- 1. CHAT WORKSPACE -->
+                <div id="stu-view-chat" class="flex-1 flex flex-col overflow-hidden">
+                    <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-5 custom-scrollbar">
+                        <!-- Chat messages will render here -->
+                    </div>
+
+                    <!-- Quick suggestion buttons -->
+                    <div class="px-6 py-2.5 bg-white border-t border-slate-200 shrink-0">
+                        <div class="text-[11px] font-medium text-slate-500 mb-1.5 flex items-center gap-1.5">
+                            <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-500"></i>
+                            <span>Suggested inquiries:</span>
+                        </div>
+                        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1 text-xs">
+                            <button onclick="sendQuickQuery('What is my current fee status and pending balance?')"
+                                class="bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-md text-slate-700 whitespace-nowrap transition">
+                                Check My Fee Status
+                            </button>
+                            <button onclick="sendQuickQuery('What are the renewal criteria for my scholarship?')"
+                                class="bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-md text-slate-700 whitespace-nowrap transition">
+                                Scholarship Criteria
+                            </button>
+                            <button onclick="sendQuickQuery('The payment portal failed. Can I pay on the next working day?')"
+                                class="bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-md text-slate-700 whitespace-nowrap transition">
+                                Payment Grace Period Policy
+                            </button>
+                            <button onclick="sendQuickQuery('Please change my registered email to my new address.')"
+                                class="bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-md text-slate-700 whitespace-nowrap transition">
+                                Update Registered Email
+                            </button>
+                            <button onclick="sendQuickQuery('Show me the fee status and pending dues of student STU102.')"
+                                class="bg-red-50 hover:bg-red-100 border border-red-200 px-3 py-1.5 rounded-md text-red-700 whitespace-nowrap transition">
+                                Test Privacy Barrier (Cross-Student Access)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chat input bar -->
+                    <div class="p-4 bg-white border-t border-slate-200 shrink-0">
+                        <form id="chat-form" onsubmit="handleChatSubmit(event)" class="relative flex items-center max-w-4xl mx-auto w-full">
+                            <input type="text" id="chat-input"
+                                placeholder="Type your inquiry (e.g., fee balance, scholarship rules, handbook policies)..."
+                                class="w-full bg-slate-50 border border-slate-300 focus:border-sky-600 focus:bg-white rounded-lg pl-4 pr-12 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition shadow-xs"
+                                required autocomplete="off">
+                            <button type="submit" id="send-btn"
+                                class="absolute right-2 w-8 h-8 rounded-md bg-sky-700 hover:bg-sky-800 text-white flex items-center justify-center transition shadow-xs">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 2. STUDENT PROFILE & FINANCIAL LEDGER -->
+                <div id="stu-view-profile" class="hidden flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar max-w-5xl mx-auto w-full">
+                    <div class="border-b border-slate-200 pb-4">
+                        <h2 class="text-xl font-semibold text-slate-900">Academic & Financial Ledger</h2>
+                        <p class="text-xs text-slate-500 mt-1">Official enrollment details and tuition accounting record retrieved directly from institutional databases.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <!-- Academic Standing Card -->
+                        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs space-y-3">
+                            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Academic Standing</div>
+                            <div class="text-sm font-semibold text-slate-900" id="stu-prof-prog">Program Name</div>
+                            <div class="text-xs text-slate-500" id="stu-prof-batch">Batch 2025-2027 · Term 2</div>
+
+                            <div class="grid grid-cols-2 gap-3 pt-2 font-mono">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block uppercase font-sans">CGPA</span>
+                                    <span class="text-xl font-bold text-slate-900" id="stu-prof-cgpa">--</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block uppercase font-sans">Attendance</span>
+                                    <span class="text-xl font-bold text-slate-900" id="stu-prof-att">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tuition Ledger Card -->
+                        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs space-y-3 md:col-span-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Term Fee Status</span>
+                                <span id="stu-prof-status" class="px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">--</span>
+                            </div>
+
+                            <div class="space-y-1.5 pt-1">
+                                <div class="flex justify-between text-xs">
+                                    <span class="text-slate-500">Payment Satisfaction:</span>
+                                    <span class="text-slate-900 font-semibold" id="stu-prof-pct">--%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200">
+                                    <div id="stu-prof-bar" class="bg-sky-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs pt-3 border-t border-slate-100">
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block font-sans">Term Fee</span>
+                                    <span class="text-slate-900 font-semibold" id="stu-prof-termfee">₹0</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block font-sans">Paid Amount</span>
+                                    <span class="text-emerald-700 font-semibold" id="stu-prof-paid">₹0</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block font-sans">Pending Balance</span>
+                                    <span class="text-rose-700 font-semibold" id="stu-prof-due">₹0</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                                    <span class="text-[10px] text-slate-500 block font-sans">Due Date</span>
+                                    <span class="text-slate-700 font-medium" id="stu-prof-duedate">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scholarship section -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500">Scholarship / Fellowship Status</h3>
+                            <span id="stu-prof-sch-status" class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Checking...</span>
+                        </div>
+                        <div class="text-sm font-semibold text-slate-900" id="stu-prof-sch-name">--</div>
+                        <p class="text-xs text-slate-600 leading-relaxed" id="stu-prof-sch-remarks">--</p>
+                    </div>
+                </div>
+
+                <!-- 3. STUDENT HANDBOOK POLICY VIEW -->
+                <div id="stu-view-handbook" class="hidden flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar max-w-5xl mx-auto w-full">
+                    <div class="border-b border-slate-200 pb-3">
+                        <h2 class="text-xl font-semibold text-slate-900">Academic Regulations & Handbook Policies</h2>
+                        <p class="text-xs text-slate-500 mt-1">Official guidelines retrieved via lexical BM25 search to answer your questions accurately.</p>
+                    </div>
+                    <div id="handbook-sections-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- 4. STUDENT CHANGE REQUESTS VIEW -->
+                <div id="stu-view-requests" class="hidden flex-1 overflow-y-auto p-6 space-y-5 custom-scrollbar max-w-5xl mx-auto w-full">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                        <div>
+                            <h2 class="text-xl font-semibold text-slate-900">Profile Change Requests</h2>
+                            <p class="text-xs text-slate-500 mt-1">Updates to critical contact fields require human approval by the Office of Student Affairs.</p>
+                        </div>
+                        <button onclick="openRequestModal()"
+                            class="bg-sky-700 hover:bg-sky-800 text-white font-medium text-xs px-3.5 py-2 rounded-lg transition flex items-center gap-1.5 shadow-xs">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>Submit Email Change</span>
+                        </button>
+                    </div>
+
+                    <div id="stu-requests-list" class="space-y-3">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- 3. ADMINISTRATOR GOVERNANCE & OPERATIONS PORTAL                           -->
+    <!-- ========================================================================= -->
+    <div id="admin-application-root" class="hidden flex-1 flex h-full overflow-hidden bg-slate-100">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-slate-900 text-slate-200 flex flex-col h-full shrink-0 z-20">
+            <!-- Brand -->
+            <div class="p-4 border-b border-slate-800 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center font-bold text-sm">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="font-semibold text-white text-xs truncate">Admin Operations</div>
+                    <div class="text-[11px] text-slate-400 truncate">Office of Student Affairs</div>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="p-3 space-y-1">
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 py-1">Console</div>
+                <button onclick="switchAdminView('overview')" id="admin-nav-overview"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium bg-slate-800 text-white transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4 text-sky-400"></i>
+                    <span>Overview & KPIs</span>
+                </button>
+                <button onclick="switchAdminView('approvals')" id="admin-nav-approvals"
+                    class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="clipboard-check" class="w-4 h-4 text-amber-400"></i>
+                        <span>Approval Queue</span>
+                    </div>
+                    <span id="admin-pending-badge" class="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full">0</span>
+                </button>
+                <button onclick="switchAdminView('roster')" id="admin-nav-roster"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Student Roster & Fees</span>
+                </button>
+                <button onclick="switchAdminView('audit')" id="admin-nav-audit"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400"></i>
+                    <span>Security Audit Logs</span>
+                </button>
+                <button onclick="switchAdminView('terminal')" id="admin-nav-terminal"
+                    class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="terminal" class="w-4 h-4 text-sky-400"></i>
+                    <span>Staff Query Terminal</span>
+                </button>
+            </div>
+
+            <!-- Admin Staff Capsule & Sign Out -->
+            <div class="mt-auto p-3 border-t border-slate-800 bg-slate-950">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 text-sky-400 font-semibold flex items-center justify-center text-xs shrink-0">
+                            AD
+                        </div>
+                        <div class="min-w-0">
+                            <div class="text-xs font-semibold text-white truncate">Administrator</div>
+                            <div class="text-[11px] text-slate-400 font-mono truncate">ADMIN001</div>
+                        </div>
+                    </div>
+                    <button onclick="logoutToFrontpage()" title="Sign Out" class="text-slate-400 hover:text-rose-400 p-1.5 rounded-md hover:bg-slate-800 transition">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Operational Stage -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
+            <!-- Top Admin Ribbon -->
+            <header class="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0">
+                <div class="text-xs font-medium text-slate-700 flex items-center gap-2">
+                    <i data-lucide="shield" class="w-4 h-4 text-sky-700"></i>
+                    <span class="font-semibold text-slate-900">Governance & Student Affairs Management Console</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-500">
+                    <span class="bg-slate-100 border border-slate-200 px-2.5 py-1 rounded">RBAC: Enforced</span>
+                    <span class="bg-slate-100 border border-slate-200 px-2.5 py-1 rounded">Audit: Active</span>
+                </div>
+            </header>
+
+            <!-- Switchable Admin Views -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar max-w-6xl mx-auto w-full">
+
+                <!-- 1. OVERVIEW (KPI DASHBOARD) -->
+                <div id="admin-view-overview" class="space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-slate-900">Operations & Governance Overview</h2>
+                        <p class="text-xs text-slate-500 mt-1">Real-time metrics on cohort enrollment, pending administrative approvals, and access control decisions.</p>
+                    </div>
+
+                    <!-- 4 Major Administrative KPI Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-1.5">
+                            <div class="flex justify-between items-center text-slate-500 text-xs">
+                                <span>Total Enrolled Students</span>
+                                <i data-lucide="users" class="w-4 h-4 text-sky-600"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-slate-900 font-mono" id="admin-kpi-students">8</div>
+                            <div class="text-[11px] text-slate-500">Across 5 PGDM Programs</div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-1.5">
+                            <div class="flex justify-between items-center text-slate-500 text-xs">
+                                <span>Pending Approvals</span>
+                                <i data-lucide="clock" class="w-4 h-4 text-amber-600"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-amber-600 font-mono" id="admin-kpi-pending">0</div>
+                            <div class="text-[11px] text-slate-500">Awaiting Staff Decision</div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-1.5">
+                            <div class="flex justify-between items-center text-slate-500 text-xs">
+                                <span>Access Denials Intercepted</span>
+                                <i data-lucide="shield-alert" class="w-4 h-4 text-rose-600"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-rose-600 font-mono" id="admin-kpi-unauthorized">0</div>
+                            <div class="text-[11px] text-slate-500">Cross-student queries blocked</div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-1.5">
+                            <div class="flex justify-between items-center text-slate-500 text-xs">
+                                <span>Executed Changes</span>
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-emerald-600 font-mono" id="admin-kpi-approved">0</div>
+                            <div class="text-[11px] text-slate-500">Approved by administration</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Audit Activity Summary -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-5 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-700">Recent Security & Governance Events</h3>
+                            <button onclick="switchAdminView('audit')" class="text-xs text-sky-700 font-medium hover:underline">View All Audit Logs →</button>
+                        </div>
+                        <div id="admin-recent-logs-list" class="space-y-2 font-mono text-xs">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. ADMIN APPROVALS QUEUE -->
+                <div id="admin-view-approvals" class="hidden space-y-5">
+                    <div>
+                        <h2 class="text-xl font-semibold text-slate-900">Change Request Review Center</h2>
+                        <p class="text-xs text-slate-500 mt-1">Review student profile modification requests. Changes are committed to the institutional database only after staff approval.</p>
+                    </div>
+
+                    <div id="admin-pending-cards-container" class="space-y-3">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- 3. STUDENT MASTER ROSTER & LEDGERS -->
+                <div id="admin-view-roster" class="hidden space-y-5">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h2 class="text-xl font-semibold text-slate-900">Enrolled Student Cohort Directory</h2>
+                            <p class="text-xs text-slate-500 mt-1">Institutional master record covering attendance, academic standing, and tuition fee ledgers.</p>
+                        </div>
+                        <input type="text" id="roster-search-input" oninput="filterRosterTable(this.value)"
+                            placeholder="Filter by name, ID or program..."
+                            class="text-xs border border-slate-300 rounded-lg px-3 py-1.5 bg-white text-slate-900 focus:outline-none focus:ring-1 focus:ring-sky-600 w-64">
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase text-[10px]">
+                                    <tr>
+                                        <th class="p-3.5">Student ID</th>
+                                        <th class="p-3.5">Full Name</th>
+                                        <th class="p-3.5">Programme</th>
+                                        <th class="p-3.5">CGPA</th>
+                                        <th class="p-3.5">Attendance</th>
+                                        <th class="p-3.5">Term Fee</th>
+                                        <th class="p-3.5">Paid</th>
+                                        <th class="p-3.5">Due</th>
+                                        <th class="p-3.5">Fee Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-roster-tbody" class="divide-y divide-slate-100 text-slate-700">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. INSTITUTIONAL AUDIT TRAIL EXPLORER -->
+                <div id="admin-view-audit" class="hidden space-y-5">
+                    <div>
+                        <h2 class="text-xl font-semibold text-slate-900">Security & Authorization Audit Logs</h2>
+                        <p class="text-xs text-slate-500 mt-1">Tamper-evident logs recording every user action, resource access, and authorization decision.</p>
+                    </div>
+
+                    <div id="admin-full-audit-container" class="space-y-2 font-mono text-xs">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- 5. STAFF ADMINISTRATIVE QUERY TERMINAL -->
+                <div id="admin-view-terminal" class="hidden space-y-4">
+                    <div>
+                        <h2 class="text-xl font-semibold text-slate-900">Administrative Staff Query Terminal</h2>
+                        <p class="text-xs text-slate-500 mt-1">Execute administrative queries across any student record or policy guideline with full institutional authority.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-5 flex flex-col h-[520px]">
+                        <div id="admin-terminal-output" class="flex-1 overflow-y-auto space-y-3 custom-scrollbar p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+                            <div class="text-slate-500 italic">Office of Student Affairs query session initialized. As an administrator, you have authority to query academic records, fee ledgers, and policies across all enrolled students.</div>
+                        </div>
+                        <form onsubmit="handleAdminTerminalSubmit(event)" class="mt-4 flex gap-2">
+                            <input type="text" id="admin-terminal-input"
+                                placeholder="e.g. Show fee status for STU104 or review CGPA of STU101..."
+                                class="flex-1 bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:ring-1 focus:ring-sky-600 font-mono"
+                                required>
+                            <button type="submit"
+                                class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2.5 rounded-lg text-xs transition">Execute Query</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- Modal for Submitting Email Change Request -->
+    <div id="request-modal" class="hidden fixed inset-0 bg-slate-900/50 backdrop-blur-2xs z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 shadow-xl border border-slate-200 space-y-4 text-slate-800">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="font-semibold text-slate-900 text-sm">Request Registered Email Update</h3>
+                <button onclick="closeRequestModal()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-4 h-4"></i></button>
+            </div>
+            <p class="text-xs text-slate-500">Official contact updates enter an administrative review queue and require staff approval prior to database update.</p>
+            <div class="space-y-1.5">
+                <label class="text-xs font-medium text-slate-700 block">New Registered Email Address:</label>
+                <input type="email" id="modal-new-email" placeholder="e.g. yourname.new@gmail.com"
+                    class="w-full text-xs border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 focus:outline-none focus:ring-1 focus:ring-sky-600 font-mono">
+            </div>
+            <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+                <button onclick="closeRequestModal()"
+                    class="px-3.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition">Cancel</button>
+                <button onclick="submitEmailUpdateModal()"
+                    class="px-4 py-1.5 text-xs font-medium bg-sky-700 hover:bg-sky-800 text-white rounded-lg transition shadow-xs">Submit Request</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT APPLICATION LOGIC ================= -->
+    <script>
+        // Global Application State
+        let currentToken = null;
+        let currentUser = null;
+        let currentUserProfile = null;
+        let chatHistory = [];
+        let cachedRosterStudents = [];
+
+        lucide.createIcons();
+
+        // 1. Authentication Handlers
+        async function handleFormLogin(type) {
+            let u, p;
+            if (type === 'student') {
+                u = document.getElementById("login-stu-id").value.trim();
+                p = document.getElementById("login-stu-pwd").value.trim();
+            } else {
+                u = document.getElementById("login-admin-id").value.trim();
+                p = document.getElementById("login-admin-pwd").value.trim();
+            }
+            if (!u || !p) {
+                alert("Please enter both ID/username and password.");
+                return;
+            }
+            await performLogin(u, p);
+        }
+
+        async function performLogin(username, password) {
+            try {
+                const res = await fetch("/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username: username, password: password })
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    alert(err.detail || "Invalid credentials.");
+                    return;
+                }
+
+                const data = await res.json();
+                currentToken = data.token;
+                currentUser = data.user;
+
+                // Hide login screen
+                document.getElementById("frontpage-login").classList.add("hidden");
+
+                // Route to appropriate dedicated interface based on role
+                const isStaff = currentUser.role.toLowerCase() === "administrator";
+                if (isStaff) {
+                    document.getElementById("student-application-root").classList.add("hidden");
+                    document.getElementById("admin-application-root").classList.remove("hidden");
+                    await loadAdminData();
+                } else {
+                    document.getElementById("admin-application-root").classList.add("hidden");
+                    document.getElementById("student-application-root").classList.remove("hidden");
+                    await loadStudentData();
+                }
+
+            } catch (err) {
+                console.error("Login error:", err);
+                alert("Could not connect to backend server.");
+            }
+        }
+
+        function logoutToFrontpage() {
+            currentToken = null;
+            currentUser = null;
+            currentUserProfile = null;
+            chatHistory = [];
+            document.getElementById("login-stu-id").value = "";
+            document.getElementById("login-stu-pwd").value = "";
+            document.getElementById("login-admin-id").value = "";
+            document.getElementById("login-admin-pwd").value = "";
+
+            document.getElementById("student-application-root").classList.add("hidden");
+            document.getElementById("admin-application-root").classList.add("hidden");
+            document.getElementById("frontpage-login").classList.remove("hidden");
+            lucide.createIcons();
+        }
+
+        // ================= STUDENT WORKSPACE FUNCTIONS =================
+        async function loadStudentData() {
+            try {
+                const res = await fetch("/api/auth/me", { headers: { "Authorization": `Bearer ${currentToken}` } });
+                const data = await res.json();
+                currentUser = data.user;
+                currentUserProfile = data.profile;
+
+                const displayName = currentUser.name || currentUser.id;
+                document.getElementById("stu-sidebar-name").innerText = displayName;
+                document.getElementById("stu-sidebar-role").innerText = `${currentUser.id} · Student`;
+                document.getElementById("stu-sidebar-avatar").innerText = displayName.split(" ").map(n => n[0]).join("").slice(0, 2);
+
+                const prof = data.profile || {};
+                document.getElementById("stu-prof-prog").innerText = prof.programme || "PGDM Programme";
+                document.getElementById("stu-prof-batch").innerText = `Batch: ${prof.batch || '2025-2027'} · ${prof.current_term || 'Term 2'}`;
+                document.getElementById("stu-prof-cgpa").innerText = prof.cgpa !== undefined ? prof.cgpa : "N/A";
+                document.getElementById("stu-prof-att").innerText = prof.attendance_percentage ? `${prof.attendance_percentage}%` : "N/A";
+
+                const fee = prof.fee_record || {};
+                if (fee.term_fee) document.getElementById("stu-prof-termfee").innerText = `₹${fee.term_fee.toLocaleString()}`;
+                if (fee.paid_amount !== undefined) document.getElementById("stu-prof-paid").innerText = `₹${fee.paid_amount.toLocaleString()}`;
+                if (fee.pending_balance !== undefined) document.getElementById("stu-prof-due").innerText = `₹${fee.pending_balance.toLocaleString()}`;
+                if (fee.due_date) document.getElementById("stu-prof-duedate").innerText = fee.due_date;
+                if (fee.payment_status) {
+                    const st = fee.payment_status.replace(/_/g, " ");
+                    const stEl = document.getElementById("stu-prof-status");
+                    stEl.innerText = st;
+                    if (fee.payment_status === "FULLY_PAID") {
+                        stEl.className = "px-2.5 py-0.5 rounded text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200";
+                    } else if (fee.payment_status === "PARTIALLY_PAID") {
+                        stEl.className = "px-2.5 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200";
+                    } else {
+                        stEl.className = "px-2.5 py-0.5 rounded text-xs font-medium bg-rose-50 text-rose-700 border border-rose-200";
+                    }
+                }
+
+                if (fee.term_fee && fee.paid_amount !== undefined) {
+                    const pct = Math.min(100, Math.round((fee.paid_amount / fee.term_fee) * 100));
+                    document.getElementById("stu-prof-pct").innerText = `${pct}% Satisfied`;
+                    document.getElementById("stu-prof-bar").style.width = `${pct}%`;
+                }
+
+                // Scholarship
+                const sch = prof.scholarship || {};
+                const schStatusEl = document.getElementById("stu-prof-sch-status");
+                const schNameEl = document.getElementById("stu-prof-sch-name");
+                const schRemarksEl = document.getElementById("stu-prof-sch-remarks");
+                if (sch.has_scholarship) {
+                    schStatusEl.innerText = (sch.status || "ACTIVE").replace(/_/g, " ");
+                    schStatusEl.className = "px-2 py-0.5 rounded text-[11px] font-medium bg-sky-50 text-sky-700 border border-sky-200";
+                    schNameEl.innerText = `${sch.scheme_name || 'Merit Scholarship'} (${sch.waiver_percentage || 0}% Waiver)`;
+                    schRemarksEl.innerText = sch.eligibility_remarks || "Enrolled in active merit award scheme.";
+                } else {
+                    schStatusEl.innerText = "No Active Scheme";
+                    schStatusEl.className = "px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-600";
+                    schNameEl.innerText = "General Tuition Fee Structure";
+                    schRemarksEl.innerText = sch.eligibility_remarks || "No scholarship currently applied. Eligible to apply for subsequent term merit awards.";
+                }
+
+                clearChatUI();
+                loadHandbookSections();
+                loadStudentRequests();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function switchStudentView(view) {
+            const views = ['chat', 'profile', 'handbook', 'requests'];
+            const titles = {
+                'chat': 'AI Support Assistant',
+                'profile': 'Academic & Fee Record',
+                'handbook': 'Student Handbook & Regulations',
+                'requests': 'Change Requests'
+            };
+
+            views.forEach(v => {
+                document.getElementById(`stu-view-${v}`).classList.add("hidden");
+                const btn = document.getElementById(`stu-nav-${v}`);
+                btn.className = "w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition";
+            });
+
+            document.getElementById(`stu-view-${view}`).classList.remove("hidden");
+            const activeBtn = document.getElementById(`stu-nav-${view}`);
+            activeBtn.className = "w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium bg-sky-50 text-sky-800 border border-sky-100 transition";
+            document.getElementById("stu-header-title").innerText = titles[view] || 'Student Support Desk';
+
+            if (view === 'requests') loadStudentRequests();
+            lucide.createIcons();
+        }
+
+        async function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById("chat-input");
+            const query = input.value.trim();
+            if (!query) return;
+
+            input.value = "";
+            appendUserBubble(query);
+
+            const sendBtn = document.getElementById("send-btn");
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i>`;
+            lucide.createIcons();
+
+            try {
+                const res = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${currentToken}`
+                    },
+                    body: JSON.stringify({ query: query, session_history: chatHistory.slice(-4) })
+                });
+
+                const data = await res.json();
+                appendAgentCard(data, query);
+
+                chatHistory.push({ role: "user", content: query });
+                chatHistory.push({ role: "assistant", content: data.answer });
+
+            } catch (err) {
+                console.error(err);
+                appendAgentCard({ answer: "An error occurred connecting to the support service.", latency_ms: 0, tools_used: [] }, query);
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i>`;
+                lucide.createIcons();
+            }
+        }
+
+        function sendQuickQuery(text) {
+            switchStudentView('chat');
+            document.getElementById("chat-input").value = text;
+            handleChatSubmit(new Event("submit"));
+        }
+
+        function appendUserBubble(text) {
+            const container = document.getElementById("chat-messages");
+            const div = document.createElement("div");
+            div.className = "flex flex-col items-end gap-1";
+            const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).toLowerCase();
+            const initials = currentUser ? currentUser.name.split(" ").map(n => n[0]).join("").slice(0, 2) : "ME";
+
+            div.innerHTML = `
+                <div class="flex items-start gap-2.5 max-w-2xl">
+                    <div class="bg-sky-700 text-white text-sm px-4 py-2.5 rounded-xl rounded-tr-xs shadow-2xs leading-relaxed">
+                        ${escapeHtml(text)}
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-sky-100 text-sky-800 font-semibold flex items-center justify-center text-xs shrink-0 mt-0.5 border border-sky-200">
+                        ${initials}
+                    </div>
+                </div>
+                <span class="text-[10px] text-slate-400 pr-9 font-mono">${timeStr}</span>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function appendAgentCard(data, query) {
+            const container = document.getElementById("chat-messages");
+            const div = document.createElement("div");
+            div.className = "flex flex-col items-start gap-1 max-w-3xl";
+
+            const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).toLowerCase();
+            const parsedMarkdown = marked.parse(data.answer || "");
+            const latencyStr = `${data.latency_ms || Math.round((data.latency_seconds || 0) * 1000)} ms`;
+
+            let toolPill = "";
+            if (data.tools_used && data.tools_used.length > 0) {
+                toolPill = `
+                    <div class="inline-flex items-center gap-1.5 text-xs text-sky-700 bg-sky-50 border border-sky-100 px-2.5 py-1 rounded-md mb-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                        <span>Retrieved via verified tool: <strong>${escapeHtml(data.tools_used.join(', '))}</strong></span>
+                    </div>
+                `;
+            }
+
+            let noticeBanner = "";
+            if (data.memory_notice) {
+                noticeBanner = `
+                    <div class="bg-amber-50 border border-amber-200 text-amber-800 rounded-lg p-2.5 text-xs flex items-center gap-2 mb-2.5">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                        <span>${escapeHtml(data.memory_notice)}</span>
+                    </div>
+                `;
+            }
+
+            div.innerHTML = `
+                <div class="flex items-start gap-2.5 w-full">
+                    <div class="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                    </div>
+
+                    <div class="flex-1 bg-white rounded-xl rounded-tl-xs border border-slate-200 p-4 space-y-2.5 shadow-2xs">
+                        ${noticeBanner}
+                        ${toolPill}
+                        <div class="markdown-body">
+                            ${parsedMarkdown}
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                            <span class="flex items-center gap-1 font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                <span>${latencyStr}</span>
+                            </span>
+                            <button onclick="copyResponseText(this)" class="hover:text-slate-700 flex items-center gap-1 transition">
+                                <i data-lucide="copy" class="w-3 h-3"></i> Copy response
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-[10px] text-slate-400 pl-9 font-mono">${timeStr}</span>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+            lucide.createIcons();
+        }
+
+        function clearChatUI() {
+            const container = document.getElementById("chat-messages");
+            container.innerHTML = "";
+            const welcomeDiv = document.createElement("div");
+            welcomeDiv.className = "flex items-start gap-2.5 max-w-3xl";
+            welcomeDiv.innerHTML = `
+                <div class="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
+                    <i data-lucide="bot" class="w-4 h-4"></i>
+                </div>
+                <div class="flex-1 bg-white rounded-xl rounded-tl-xs border border-slate-200 p-4 text-sm text-slate-700 leading-relaxed shadow-2xs">
+                    Hello! I am your <strong>Student Support Assistant</strong>. I can assist you with your <strong>tuition fee balance</strong>, <strong>academic standing</strong>, <strong>scholarship retention criteria</strong>, and <strong>handbook policies</strong>.
+                </div>
+            `;
+            container.appendChild(welcomeDiv);
+            lucide.createIcons();
+        }
+
+        async function loadHandbookSections() {
+            try {
+                const res = await fetch("/api/handbook/sections");
+                const data = await res.json();
+                const container = document.getElementById("handbook-sections-list");
+                container.innerHTML = "";
+                (data || []).forEach(s => {
+                    const card = document.createElement("div");
+                    card.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-2 flex flex-col justify-between";
+                    card.innerHTML = `
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-mono font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">${s.chunk_id}</span>
+                            <h3 class="text-sm font-semibold text-slate-900">${escapeHtml(s.title)}</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed line-clamp-3">${escapeHtml(s.content)}</p>
+                        </div>
+                        <button onclick="askAboutSection('${escapeHtml(s.title)}')" class="mt-2 w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-medium text-xs py-1.5 rounded-lg transition flex items-center justify-center gap-1">
+                            <span>Ask about this policy</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3 text-slate-500"></i>
+                        </button>
+                    `;
+                    container.appendChild(card);
+                });
+                lucide.createIcons();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function askAboutSection(title) {
+            switchStudentView('chat');
+            sendQuickQuery(`What is the institute policy regarding ${title}?`);
+        }
+
+        async function loadStudentRequests() {
+            try {
+                const res = await fetch("/api/student/dashboard", { headers: { "Authorization": `Bearer ${currentToken}` } });
+                const data = await res.json();
+                const container = document.getElementById("stu-requests-list");
+                container.innerHTML = "";
+                if (!data.requests || data.requests.length === 0) {
+                    container.innerHTML = `<div class="text-xs text-slate-500 p-6 bg-white rounded-xl border border-slate-200 text-center">No change requests on file.</div>`;
+                    return;
+                }
+                data.requests.forEach(r => {
+                    let badgeClass = "bg-amber-50 text-amber-700 border-amber-200";
+                    if (r.status === "EXECUTED" || r.status === "APPROVED") badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200";
+                    else if (r.status === "REJECTED") badgeClass = "bg-rose-50 text-rose-700 border-rose-200";
+
+                    const item = document.createElement("div");
+                    item.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-1.5 text-xs";
+                    item.innerHTML = `
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono font-semibold text-slate-700">${r.id}</span>
+                            <span class="px-2 py-0.5 rounded text-[11px] font-medium border ${badgeClass}">${r.status}</span>
+                        </div>
+                        <div class="text-slate-800 font-medium">${r.action_type}: <span class="font-mono font-semibold text-slate-900">${r.requested_value}</span></div>
+                        <div class="text-[11px] text-slate-500">Original: ${r.old_value} · Submitted: ${r.created_at ? r.created_at.slice(0, 10) : 'Recent'}</div>
+                    `;
+                    container.appendChild(item);
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        // ================= ADMINISTRATOR FUNCTIONS =================
+        async function loadAdminData() {
+            try {
+                const [dashRes, rosterRes, auditRes, appRes] = await Promise.all([
+                    fetch("/api/admin/dashboard", { headers: { "Authorization": `Bearer ${currentToken}` } }),
+                    fetch("/api/admin/students", { headers: { "Authorization": `Bearer ${currentToken}` } }),
+                    fetch("/api/admin/audit-logs", { headers: { "Authorization": `Bearer ${currentToken}` } }),
+                    fetch("/api/admin/approvals", { headers: { "Authorization": `Bearer ${currentToken}` } })
+                ]);
+
+                const dash = await dashRes.json();
+                const roster = await rosterRes.json();
+                const audit = await auditRes.json();
+                const apps = await appRes.json();
+
+                // KPI Cards
+                document.getElementById("admin-kpi-students").innerText = dash.total_students || roster.length;
+                document.getElementById("admin-kpi-pending").innerText = dash.pending_count || 0;
+                document.getElementById("admin-pending-badge").innerText = dash.pending_count || 0;
+                document.getElementById("admin-kpi-unauthorized").innerText = dash.unauthorized_count || 0;
+                document.getElementById("admin-kpi-approved").innerText = dash.approved_count || 0;
+
+                // Recent Logs
+                const recentLogs = dash.recent_audit_logs || [];
+                const logCont = document.getElementById("admin-recent-logs-list");
+                logCont.innerHTML = "";
+                recentLogs.slice(0, 5).forEach(l => {
+                    const isDenied = l.permission_decision === "DENIED";
+                    const badge = isDenied ? "text-rose-700 bg-rose-50 border-rose-200" : "text-emerald-700 bg-emerald-50 border-emerald-200";
+                    const row = document.createElement("div");
+                    row.className = "bg-slate-50 p-2.5 rounded-lg border border-slate-200 flex items-center justify-between text-xs";
+                    row.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold border ${badge}">${l.permission_decision}</span>
+                            <span class="text-slate-900 font-medium">${l.action}</span>
+                            <span class="text-slate-500">(${l.user_id} - ${l.user_role})</span>
+                        </div>
+                        <span class="text-slate-500 text-[11px] truncate max-w-xs">${l.target_resource}</span>
+                    `;
+                    logCont.appendChild(row);
+                });
+
+                renderAdminApprovals(apps.pending || []);
+                cachedRosterStudents = roster || [];
+                renderAdminRoster(cachedRosterStudents);
+                renderAdminAudit(audit || []);
+
+            } catch (e) {
+                console.error("Admin load error:", e);
+            }
+        }
+
+        function switchAdminView(view) {
+            const views = ['overview', 'approvals', 'roster', 'audit', 'terminal'];
+            views.forEach(v => {
+                document.getElementById(`admin-view-${v}`).classList.add("hidden");
+                const btn = document.getElementById(`admin-nav-${v}`);
+                if (btn) btn.className = "w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition";
+            });
+
+            document.getElementById(`admin-view-${view}`).classList.remove("hidden");
+            const activeBtn = document.getElementById(`admin-nav-${view}`);
+            if (activeBtn) activeBtn.className = "w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium bg-slate-800 text-white transition";
+
+            if (view === 'approvals' || view === 'overview') loadAdminData();
+            lucide.createIcons();
+        }
+
+        function renderAdminApprovals(pendingRequests) {
+            const container = document.getElementById("admin-pending-cards-container");
+            container.innerHTML = "";
+            if (!pendingRequests || pendingRequests.length === 0) {
+                container.innerHTML = `<div class="text-xs text-slate-500 p-6 bg-white rounded-xl border border-slate-200 text-center">All change requests have been reviewed. No pending requests.</div>`;
+                return;
+            }
+            pendingRequests.forEach(r => {
+                const card = document.createElement("div");
+                card.className = "bg-white p-5 rounded-xl border border-amber-200 shadow-2xs space-y-3";
+                card.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono font-semibold text-slate-900 text-sm">${r.id}</span>
+                        <span class="bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-semibold px-2 py-0.5 rounded uppercase">Pending Review</span>
+                    </div>
+                    <div class="text-xs text-slate-700">
+                        Student <strong>${r.requester_id}</strong> requests official update of registered email address:
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                            <span class="text-slate-500 block text-[10px] font-sans">ORIGINAL VALUE</span>
+                            <span class="text-slate-700">${r.old_value}</span>
+                        </div>
+                        <div class="bg-slate-50 p-2.5 rounded-lg border border-sky-200">
+                            <span class="text-sky-700 block text-[10px] font-sans font-medium">REQUESTED NEW VALUE</span>
+                            <span class="text-slate-900 font-semibold">${r.requested_value}</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 pt-1">
+                        <button onclick="adminApprove('${r.id}')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-1.5 px-4 rounded-lg text-xs transition">Approve & Execute</button>
+                        <button onclick="adminReject('${r.id}')" class="bg-white hover:bg-slate-50 text-rose-700 font-medium py-1.5 px-3 rounded-lg text-xs transition border border-slate-200">Reject</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        async function adminApprove(reqId) {
+            try {
+                const res = await fetch("/api/admin/approve", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentToken}` },
+                    body: JSON.stringify({ request_id: reqId })
+                });
+                const data = await res.json();
+                alert(data.message);
+                await loadAdminData();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        async function adminReject(reqId) {
+            const reason = prompt("Enter administrative rejection reason:", "Invalid personal domain / Policy non-compliance");
+            if (!reason) return;
+            try {
+                const res = await fetch("/api/admin/reject", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentToken}` },
+                    body: JSON.stringify({ request_id: reqId, reason: reason })
+                });
+                const data = await res.json();
+                alert(data.message);
+                await loadAdminData();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function filterRosterTable(query) {
+            const q = query.toLowerCase().trim();
+            if (!q) {
+                renderAdminRoster(cachedRosterStudents);
+                return;
+            }
+            const filtered = cachedRosterStudents.filter(s => {
+                return (s.student_id && s.student_id.toLowerCase().includes(q)) ||
+                       (s.full_name && s.full_name.toLowerCase().includes(q)) ||
+                       (s.programme && s.programme.toLowerCase().includes(q)) ||
+                       (s.email && s.email.toLowerCase().includes(q));
+            });
+            renderAdminRoster(filtered);
+        }
+
+        function renderAdminRoster(students) {
+            const tbody = document.getElementById("admin-roster-tbody");
+            tbody.innerHTML = "";
+            students.forEach(s => {
+                const fee = s.fee_record || {};
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-50 transition";
+                tr.innerHTML = `
+                    <td class="p-3.5 font-mono font-semibold text-slate-900">${s.student_id}</td>
+                    <td class="p-3.5 font-medium text-slate-900">${s.full_name}</td>
+                    <td class="p-3.5 text-slate-600">${s.programme}</td>
+                    <td class="p-3.5 font-mono font-semibold text-slate-900">${s.cgpa !== undefined ? s.cgpa : 'N/A'}</td>
+                    <td class="p-3.5 font-mono text-slate-700">${s.attendance_percentage || s.attendance || 0}%</td>
+                    <td class="p-3.5 font-mono">₹${(fee.term_fee || 0).toLocaleString()}</td>
+                    <td class="p-3.5 font-mono text-emerald-700">₹${(fee.paid_amount || 0).toLocaleString()}</td>
+                    <td class="p-3.5 font-mono font-semibold text-rose-700">₹${(fee.pending_balance !== undefined ? fee.pending_balance : s.pending_balance || 0).toLocaleString()}</td>
+                    <td class="p-3.5"><span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 border border-slate-200 text-slate-700">${(fee.payment_status || 'N/A').replace(/_/g, ' ')}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderAdminAudit(logs) {
+            const container = document.getElementById("admin-full-audit-container");
+            container.innerHTML = "";
+            logs.forEach(l => {
+                const isDenied = l.permission_decision === "DENIED";
+                const badge = isDenied ? "text-rose-700 bg-rose-50 border-rose-200" : "text-emerald-700 bg-emerald-50 border-emerald-200";
+                const row = document.createElement("div");
+                row.className = "bg-white p-3 rounded-xl border border-slate-200 shadow-2xs space-y-1 text-xs";
+                row.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold border ${badge}">${l.permission_decision}</span>
+                            <span class="font-medium text-slate-900">${l.action}</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400">${l.timestamp || ''}</span>
+                    </div>
+                    <div class="text-[11px] text-slate-600">User: <strong class="text-slate-900">${l.user_id}</strong> (${l.user_role}) · Target: <span class="text-slate-800">${l.target_resource}</span></div>
+                    ${l.details ? `<div class="text-[10px] text-slate-400 truncate">Details: ${JSON.stringify(l.details)}</div>` : ''}
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        async function handleAdminTerminalSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById("admin-terminal-input");
+            const q = input.value.trim();
+            if (!q) return;
+            input.value = "";
+
+            const output = document.getElementById("admin-terminal-output");
+            const userEntry = document.createElement("div");
+            userEntry.className = "p-2 rounded bg-white border border-slate-200 text-sky-800 font-mono text-xs";
+            userEntry.innerHTML = `<strong>admin@affairs:~$</strong> ${escapeHtml(q)}`;
+            output.appendChild(userEntry);
+
+            try {
+                const res = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentToken}` },
+                    body: JSON.stringify({ query: q })
+                });
+                const data = await res.json();
+                const respEntry = document.createElement("div");
+                respEntry.className = "p-3 rounded bg-white border border-slate-200 text-slate-800 markdown-body text-xs";
+                respEntry.innerHTML = marked.parse(data.answer || "");
+                output.appendChild(respEntry);
+                output.scrollTop = output.scrollHeight;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // Modal Functions
+        function openRequestModal() { document.getElementById("request-modal").classList.remove("hidden"); }
+        function closeRequestModal() { document.getElementById("request-modal").classList.add("hidden"); }
+        async function submitEmailUpdateModal() {
+            const email = document.getElementById("modal-new-email").value.trim();
+            if (!email) return;
+            try {
+                const res = await fetch("/api/student/request-email-update", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentToken}` },
+                    body: JSON.stringify({ new_email: email })
+                });
+                const data = await res.json();
+                alert(data.message);
+                closeRequestModal();
+                loadStudentRequests();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function copyResponseText(btn) {
+            const card = btn.closest(".bg-white");
+            const body = card.querySelector(".markdown-body");
+            if (body) {
+                navigator.clipboard.writeText(body.innerText);
+                btn.innerHTML = `<i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Copied`;
+                setTimeout(() => {
+                    btn.innerHTML = `<i data-lucide="copy" class="w-3 h-3"></i> Copy response`;
+                    lucide.createIcons();
+                }, 2000);
+            }
+        }
+
+        function startNewChat() {
+            chatHistory = [];
+            clearChatUI();
+        }
+
+        function downloadChatHistory() {
+            if (chatHistory.length === 0) {
+                alert("No chat conversation to export.");
+                return;
+            }
+            const blob = new Blob([JSON.stringify(chatHistory, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `student_support_log_${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.innerText = text;
+            return div.innerHTML;
+        }
+
+        window.onload = () => {
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>

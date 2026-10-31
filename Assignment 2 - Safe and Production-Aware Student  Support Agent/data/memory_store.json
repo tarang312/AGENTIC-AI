@@ -1,0 +1,88 @@
+{
+  "STU101": {
+    "student_id": "STU101",
+    "useful_facts": {
+      "specialization_interest": {
+        "value": "Student is in AI & Data Science and has a strong interest in Natural Language Processing (NLP) and Deep Learning.",
+        "updated_at": "2026-10-31T18:00:31.155162"
+      }
+    },
+    "audit_log": [
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-28T11:57:30.240237"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-28T12:10:16.873877"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T14:37:38.964229"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T14:39:55.353938"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T14:53:02.576595"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T14:54:53.261740"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T14:58:35.427060"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:03:40.262989"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:06:03.610606"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:23:55.155660"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:34:49.474564"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:36:23.784109"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T16:49:46.911315"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T17:01:11.460507"
+      },
+      {
+        "action": "STORED",
+        "key": "specialization_interest",
+        "timestamp": "2026-10-31T18:00:31.155162"
+      }
+    ]
+  }
+}
