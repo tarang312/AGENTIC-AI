@@ -1,5 +1,4 @@
 # Intelligent Student Support Agent (Assignment 1)
-**Course**: AGENTIC AI ENGINEERING | PGDM (Big Data Analytics / AI & Data Science) | Batch 2025-27
 
 A working AI Student Support Agent that answers common student queries (fees, scholarships, course changes, and support requests) and demonstrates the core agentic concepts:
 1. **Working Agent Loop**: Decides when to answer directly, call a tool, retrieve policy information, or use remembered information.
